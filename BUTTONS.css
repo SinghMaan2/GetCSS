@@ -1,0 +1,445 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: black;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.navleft {
+    display: flex;
+    align-items: baseline;
+}
+
+.navright ul li {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+        z-index: -1;
+        visibility: hidden;
+    }
+}
+.navright ul li:active {
+    opacity: 0.9;
+}
+
+.navright ul li:hover::after {
+    visibility: visible;
+}
+
+
+nav .logo {
+    margin-left: 10px;
+    color: blueviolet;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    font-weight: 1000;
+}
+
+nav ul {
+    margin: 0px 15px;
+    display: flex;
+}
+
+nav ul li {
+    width: 100px;
+    height: 40px;
+    list-style: none;
+    margin: 0px 10px;
+    border-radius: 5px;
+
+    font-family: 'Noto Sans';
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li:hover
+{
+    background-color: rgb(28, 28, 28);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Section */
+
+/* ----> Menu */
+.rootContainer {
+    display: flex;
+}
+
+.rootContainer .Menu {
+    margin: 15px;
+    width: 13%;
+    position: sticky;
+    top: 10px;
+}
+
+.rootContainer .Menu ul {}
+
+.rootContainer .Menu ul li {
+    width: 100%;
+    height: 50px;
+    list-style: none;
+    background-color: rgb(28, 28, 28);
+    margin: 10px 0px;
+    border-radius: 5px;
+
+    font-family: 'Noto Sans';
+    font-weight: 600;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.rootContainer .Menu ul li:hover
+{
+    background-color: rgb(155, 155, 155);
+}
+
+.rootContainer .Menu ul li a {
+    margin: 0px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+/* ---->mainContent */
+.mainContent {
+    width: 85%;
+    font-family: 'Noto Sans';
+    margin: 15px;
+    color: white;
+}
+
+.mainContent h1 {
+    margin: 10px 0px;
+}
+
+.mainContent h4 {
+    width: 100%;
+    margin: 10px 0px;
+    opacity: 0.5;
+    font-weight: 300;
+}
+
+.mainContent .cardsSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(294px, 1fr));
+    grid-gap: 20px 14px;
+    align-content: stretch;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+.mainContent .cardsSection .card {
+    width: 98%;
+    height: 294px;
+    border-radius: 10px;
+    background-color: #e8e8e8;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    &::after {
+        content: '</> Get code';
+        position: absolute;
+        width: 110px;
+        height: 35px;
+        right: 10px;
+        bottom: 10px;
+        background-color: black;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        transition: visibility 0.4s ease-in-out;
+        font-size: 16px;
+
+    }
+}
+
+.mainContent .cardsSection .card:hover::after {
+    visibility: visible;
+}
+
+/* Card Buttons */
+
+/* ----card1 */
+#card1 button {
+    width: 100px;
+    height: 45px;
+    border: 2.5px solid #E0E1E4;
+    box-shadow: 0px 0px 20px -20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out 0ms;
+
+}
+
+#card1 button:active {
+    font-size: 12px;
+    font-weight: 500;
+    width: 90px;
+    height: 40px;
+}
+
+/* ----card2 */
+#card2 {
+    background-color: rgb(28, 28, 28);
+}
+
+#card2 .button {
+    background-color: rgb(28, 28, 28);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-color: white;
+        opacity: 0.4;
+        visibility: hidden;
+    }
+}
+
+#card2 .button i {
+    transition: all 0.4s;
+}
+
+#card2 .button:hover i {
+    transform: rotate(90deg);
+}
+
+#card2 .button:active {
+    opacity: 1;
+}
+
+#card2 .button:active::after {
+    visibility: visible;
+}
+
+/* ----card3 */
+#card3 {
+    background-color: rgb(28, 28, 28);
+}
+
+#card3 .button {
+    width: 130px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    border: 3px solid #25D366;
+    color: #25D366;
+    isolation: isolate;
+    border-radius: 8px;
+    transition: all 0.5s;
+
+    &::before
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0px;
+        height: 100%;
+        background-color: #25D366;
+        transition: all 0.5s;
+    }
+    &::after
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0px;
+        height: 100%;
+        background-color: #25D366;
+        transition: all 0.5s;
+    }
+}
+
+#card3 .button:hover::before
+{
+    width: 65%;
+    border-radius: 0px 0px 40px 0px;
+}
+#card3 .button:hover::after
+{
+    width: 65%;
+    border-radius: 40px 0px 0px 0px;
+}
+
+#card3 .button:active::before {
+    background-color: #13b950;
+}
+#card3 .button:active::after {
+    background-color: #13b950;
+}
+#card3 .button:active {
+    border: 3px solid #13b950;
+}
+
+/* ----card4 */
+#card4 {}
+
+#card4 .button {
+    width: 140px;
+    height: 55px;
+
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border-radius: 10px;
+    position: relative;
+
+    &::after {
+        content: 'Button';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        position: absolute;
+        inset: 4px;
+        border-radius: inherit;
+    }
+
+    &::before {
+        content: 'Button';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+        border-radius: inherit;
+        z-index: 1;
+        visibility: hidden;
+    }
+}
+
+#card4 .button:hover::before {
+    visibility: visible;
+}
+
+#card4 .button:active::before {
+    inset: 4px;
+    background: linear-gradient(144deg, #00ddeb, #5b42f3 50%, #af40ff);
+}
+
+/* ----card5 */
+#card5 {}
+
+#card5 .button {
+    width: 130px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    border-radius: 10px;
+
+
+    &::before {
+        content: '\f232';
+        font-family: "Font Awesome 6 Brands";
+        font-weight: 900;
+        position: absolute;
+        inset: 0;
+        right: 70%;
+        background-color: #25D366;
+        transition: right 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: inherit;
+    }
+
+    &::after {
+        content: 'Text Me';
+        position: absolute;
+        inset: 0;
+        left: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+        font-weight: 500;
+    }
+}
+
+#card5 .button:hover::before {
+    right: 0;
+}
+
+#card5 .button:active::before {
+    background-color: #13b950;
+}
+
+/* Responsive-Ness */
+
+@media (max-width:944px) {
+    .rootContainer .Menu
+    {
+        display: none;
+    }
+
+    .navright
+    {
+        display: none;
+    }
+    .navleft
+    {
+        display: none;
+    }
+    .mainContent
+    {
+        margin: 0px auto;
+    }
+}
